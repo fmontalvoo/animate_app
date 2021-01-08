@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:animate_do/animate_do.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import 'package:animate_app/src/pages/home_page.dart';
 import 'package:animate_app/src/pages/twitter_page.dart';
 
 class FirstPage extends StatelessWidget {
@@ -65,7 +66,12 @@ class FirstPage extends StatelessWidget {
       floatingActionButton: ElasticInRight(
         child: FloatingActionButton(
           child: FaIcon(FontAwesomeIcons.play),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+                context,
+                CupertinoPageRoute(
+                    builder: (BuildContext context) => HomePage()));
+          },
         ),
       ),
     );
