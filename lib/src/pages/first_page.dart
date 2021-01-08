@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:animate_do/animate_do.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import 'package:animate_app/src/pages/twitter_page.dart';
+
 class FirstPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -12,7 +14,14 @@ class FirstPage extends StatelessWidget {
         title:
             FadeIn(delay: Duration(milliseconds: 500), child: Text("Animate")),
         actions: [
-          IconButton(icon: FaIcon(FontAwesomeIcons.twitter), onPressed: () {}),
+          IconButton(
+              icon: FaIcon(FontAwesomeIcons.twitter),
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    CupertinoPageRoute(
+                        builder: (BuildContext context) => TwitterPage()));
+              }),
           SlideInLeft(
             from: 21.0,
             child: IconButton(
